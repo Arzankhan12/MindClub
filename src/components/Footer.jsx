@@ -4,15 +4,13 @@ import logo from '../assets/images/mindsclub-logo.png'
 
 const Footer = () => {
   return (
-    <div className='w-full h-[65vh] flex flex-col bg-[#25262B] text-white'>
-        <div className='w-full h-[90%] flex justify-between items-center px-20'>
+    <div className='w-full md:h-[65vh] flex flex-col bg-[#25262B] text-white'>
+        <div className='w-full h-[90%] flex flex-col md:flex-row justify-between md:items-center px-10 md:px-20 md:py-0 py-20 gap-20 md:gap-0'>
             <div>
-                <div>
-                    <img src={logo} alt="" />
-                    <p className='text-lg'>A space to grow, together!</p>
-                </div>
+                <img src={logo} alt="" />
+                <p className='text-lg'>A space to grow, together!</p>
             </div>
-            <div className='flex gap-30'>
+            <div className='flex flex-col md:flex-row gap-20 md:gap-30'>
                 <div className='flex flex-col gap-3'>
                     <h2>Explore</h2>
                     <Link className='text-[#BCBCBC]' to>Workshops</Link>
@@ -39,7 +37,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className='w-full h-[15%] flex justify-center items-center  border-t-[1px] border-white'>
+        <div className='w-full h-[15%] md:py-0 py-5 flex justify-center items-center  border-t-[1px] border-white'>
             <p className='text-white'>
                 @copyright 2025 all right reserved
             </p>

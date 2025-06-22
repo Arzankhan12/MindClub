@@ -14,7 +14,7 @@ const Workshop = () => {
     <div className='w-screen overflow-hidden'>
         <div className="workshop-landing-section relative w-full h-screen bg-blue-600 bg-cover bg-bottom">
             <video autoPlay playsInline loop muted className='absolute top-0 left-0 w-full h-full object-cover ' src={workshopVid}></video>
-            <div className='absolute w-[70vw] md:w-[28vw] top-[25vh] md:top-[20vh] left-[10vw] gap-4 flex flex-col'>
+            <div className='absolute w-full md:w-[28vw] top-[25vh] md:top-[20vh] md:left-[10vw] gap-4 flex flex-col'>
                 <h1 className='font-[700] text-[7.5vw] text-center md:text-start md:text-5xl leading-[120%] text-[#ffffff]'>
                     Goa Edition Branding & Beyond
                 </h1>
