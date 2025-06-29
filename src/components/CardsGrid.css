@@ -1,0 +1,64 @@
+/* Custom styling for Swiper component */
+
+/* Swiper container */
+.swiper {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+/* Swiper slide */
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Active slide styling */
+.swiper-slide-active {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007aff;
+  opacity: 1;
+}
+
+/* FreeMode specific styling */
+.mySwiper {
+  overflow: visible;
+}
+
+/* Medium screen specific styling (768px-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .swiper-slide {
+    transition: transform 0.3s ease;
+  }
+  
+  .swiper-slide:hover {
+    transform: scale(1.03);
+  }
+  
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Small screen specific styling */
+@media (max-width: 767px) {
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+  }
+}
