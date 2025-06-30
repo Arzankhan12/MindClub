@@ -11,14 +11,16 @@ import PropTypes from 'prop-types';
 
 const variantStyles = {
   A: {
-    wrapper: 'card-base flex flex-row items-start gap-4 w-full max-w-[40rem]',
-    img: 'w-52 h-72 object-cover rounded-xl',
-    text: 'ml-4 text-2xl font-normal leading-left font-semibold',
+    // Always horizontal layout (image left, text right) across screen sizes
+    wrapper: 'card-base flex flex-row items-start gap-3 w-full max-w-[100%] md:max-w-[40rem]',
+    img: 'w-32 h-48 md:w-52 md:h-72 object-cover rounded-xl',
+    // Add left margin between image and text
+    text: 'mt-3 md:mt-0 md:ml-4 text-lg md:text-2xl font-normal leading-normal text-left font-semibold',
   },
   B: {
-    wrapper: 'card-base flex flex-col items-center gap-4 w-full max-w-xs',
-    img: 'w-[100%] h-96 aspect-square object-cover rounded-xl',
-    text: 'mt-2 text-xl font-normal leading-normal text-left font-semibold',
+    wrapper: 'card-base flex flex-col items-start gap-3 w-full max-w-[18rem] md:w-full md:max-w-sm ml-auto md:ml-0 transform translate-x-1/2 md:translate-x-0',
+    img: 'w-full h-48 md:h-96 aspect-square object-cover rounded-xl',
+    text: 'mt-2 text-lg md:text-2xl font-normal leading-normal text-left font-semibold',
   },
 };
 

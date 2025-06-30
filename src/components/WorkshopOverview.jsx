@@ -36,7 +36,7 @@ const slidesByDay = [
         subtitle: 'ARRIVAL',
         cards: [
           {
-            img: 'https://images.unsplash.com/photo-1524593119771-fd5f4e6976ca?auto=format&fit=crop&w=600&q=60',
+            img: 'https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             text: 'Be greeted with a refreshing welcome drink.',
           },
           {
@@ -56,7 +56,7 @@ const slidesByDay = [
         text: 'Morning yoga and meditation session.',
       },
       {
-        img: 'https://images.unsplash.com/photo-1519922639192-713cb48795b1?auto=format&fit=crop&w=600&q=60',
+        img: 'https://www.gokitetours.com/wp-content/uploads/2024/09/goa-tour-packages-from-india.webp',
         text: 'Local culture and history tour.',
       },
     ],
@@ -66,11 +66,11 @@ const slidesByDay = [
     subtitle: 'WORKSHOP',
     cards: [
       {
-        img: 'https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=600&q=60',
+        img: 'https://img.freepik.com/free-photo/umbrella-chair_74190-2383.jpg',
         text: 'Creative brainstorming session.',
       },
       {
-        img: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=60',
+        img: 'https://img.freepik.com/premium-photo/beach-goa-india_78361-4717.jpg?semt=ais_hybrid&w=740',
         text: 'Hands-on workshop activities.',
       },
     ],
@@ -80,11 +80,11 @@ const slidesByDay = [
     subtitle: 'ADVENTURE',
     cards: [
       {
-        img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=60',
+        img: 'https://t3.ftcdn.net/jpg/01/40/51/56/360_F_140515612_0MMpqpsIvs6xno5YXmPVy9FUmZ4uLnFB.jpg',
         text: 'Outdoor adventure activities.',
       },
       {
-        img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=60',
+        img: 'https://t3.ftcdn.net/jpg/00/77/00/26/360_F_77002615_Gl1Hk6qZpi2xCAlX8EUTRLBqC4ei6QfC.jpg',
         text: 'Team building exercises.',
       },
     ],
@@ -294,11 +294,11 @@ const WorkshopOverview = () => {
         <div className="flex justify-between py-12 px-8 md:px-16">
           {/* dynamic heading based on active slide */}
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold">
               {currentSlide.slide.title}
               {currentSlide.isGrouped && `: ${currentSlide.slide.slides[currentSlide.slideIndex].subtitle}`}
             </h1>
-            <h2 className="flex items-center gap-2 text-lg md:text-xl">
+            <h2 className="flex items-center gap-2 text-sm sm:text-base md:text-xl">
               <PiAirplaneTiltFill /> 
               {currentSlide.isGrouped 
                 ? `Day ${slidesState.findIndex(s => s.title === currentSlide.slide.title) + 1} - ${currentSlide.slide.slides[currentSlide.slideIndex].subtitle}`
@@ -306,11 +306,11 @@ const WorkshopOverview = () => {
             </h2>
           </div>
           {/* Days Pagination */}
-          <div className="flex gap-4 items-center mr-2">
+          <div className="flex gap-2 md:gap-4 items-center mr-2">
             {slidesState.map((slide, idx) => (
               <div
                 key={idx}
-                className={`w-8 h-8 rounded-full border border-black flex items-center justify-center transition-all duration-200 
+                className={`w-5 h-5 md:w-8 md:h-8 rounded-full border border-black flex items-center justify-center transition-all duration-200 
                   ${getCurrentSlide(activeIdx)?.slide.title === slide.title ? 'bg-black text-white' : 'bg-transparent text-black'}`}
                 style={{ fontSize: '1rem', fontWeight: 500 }}
               >
@@ -384,7 +384,7 @@ const WorkshopOverview = () => {
         {slidesState.flatMap((slide, idx) => {
           if (slide.isGrouped) {
             return slide.slides.map((groupedSlide, groupIdx) => (
-              <div key={`${idx}-${groupIdx}`} className="w-[50%] h-full flex flex-row md:flex-row items-center justify-evenly gap-16 p-8 md:p-20">
+              <div key={`${idx}-${groupIdx}`} className="w-full md:w-[50%] h-full flex flex-col md:flex-row items-center justify-center md:justify-evenly gap-0 md:gap-16 p-4 md:p-20">
                 {groupedSlide.cards.map((c, ci) => (
                   <CardLayout
                     key={ci}
@@ -399,7 +399,7 @@ const WorkshopOverview = () => {
             ));
           }
           return (
-            <div key={idx} className="w-[40%] h-full flex flex-row md:flex-row items-center justify-evenly gap-16 p-8 md:p-20">
+            <div key={idx} className="w-full md:w-[40%] h-full flex flex-col md:flex-row items-center justify-center md:justify-evenly gap-0 md:gap-16 p-4 md:p-20">
               {slide.cards.map((c, ci) => (
                 <CardLayout
                   key={ci}
@@ -416,9 +416,9 @@ const WorkshopOverview = () => {
     </motion.div>
 
     {/* Drag hint */}
-    <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex flex-col items-center gap-2">
+    <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex flex-col items-start justify-center gap-2">
       <span className="text-sm">Drag ➜</span>
-      <div ref={knobContainerRef} className="w-24 h-6 bg-white rounded-full flex items-center justify-start pl-1">
+      <div ref={knobContainerRef} className="w-27 max-md:w-24 h-6 lg:h-[34px] bg-white rounded-full flex items-center justify-start pl-1 custom-shadow">
         <motion.div
           drag="x"
           dragConstraints={knobContainerRef}
@@ -441,7 +441,7 @@ const WorkshopOverview = () => {
           }}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
-          className="w-4 h-4 bg-orange-500 rounded-full cursor-pointer"
+          className="w-4 h-4 lg:w-7 lg:h-7 rounded-full cursor-pointer custom-org"
         />
         </div>
       </div>

@@ -78,7 +78,7 @@ const FooterNav = ({ items = [], activeIndex = 0, progress = 0, onSelect }) => {
         {items.map((label, i) => (
           <button
             key={i}
-            className={`${i === activeIndex ? 'flex' : 'hidden'} lg:flex items-center gap-2 text-sm md:text-base font-medium transition-colors duration-200 ${
+            className={`${i === activeIndex ? 'flex' : 'hidden'} lg:flex items-center gap-2 text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-base font-medium transition-colors duration-200 ${
               i === activeIndex ? 'text-black' : 'text-gray-500 hover:text-black'
             }`}
             onClick={() => onSelect && onSelect(i)}
@@ -86,7 +86,7 @@ const FooterNav = ({ items = [], activeIndex = 0, progress = 0, onSelect }) => {
             <span>{label}</span>
             {/* render bar only for items before last */}
             {i < items.length - 1 && (
-              <span className="relative w-72 h-[2px] bg-gray-300 overflow-visible">
+              <span className="relative w-40 md:w-60 lg:w-48 xl:w-48 2xl:w-72 h-[2px] bg-gray-300 overflow-visible">
                 <span
                   ref={(el) => (barRefs.current[i] = el)}
                   className="absolute top-0 left-0 w-full h-full bg-black origin-left transform"
