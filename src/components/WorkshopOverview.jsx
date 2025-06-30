@@ -416,7 +416,7 @@ const WorkshopOverview = () => {
     </motion.div>
 
     {/* Drag hint */}
-    <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex flex-col items-start justify-center gap-2">
+    <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex flex-col items-start justify-center gap-2 max-[426px]:hidden">
       <span className="text-sm">Drag ➜</span>
       <div ref={knobContainerRef} className="w-27 max-md:w-24 h-6 lg:h-[34px] bg-white rounded-full flex items-center justify-start pl-1 custom-shadow">
         <motion.div

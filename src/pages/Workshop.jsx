@@ -7,12 +7,11 @@ import dummyimg from "../assets/images/dummy.png";
 // import room from '../assets/images/room.png'
 import workshopVid from "../assets/videos/workshop-vid.mp4";
 import Footer from "../components/Footer";
-import DayViewer from "../components/DayViewer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import BtnOutlined from "../components/BtnOutlined";
-import CardsGrid from "../components/CardsGrid";
+import Carousel from "../components/Carousel";
 import WorkshopOverview from "../components/WorkshopOverview";
 import Mentor from "../components/Mentor";
 
@@ -58,7 +57,7 @@ const Workshop = () => {
         </div>
       </div>
 
-      <div className="about-the-workshop relative w-full py-20 overflow-hidden">
+      <div className="about-the-workshop relative w-full py-20 px-4 md:pl-10 md:pr-32 overflow-hidden">
         <div className="w-full md:w-[500px] pb-20 md:pl-[3vw] px-8">
           <h1 className="md:text-4xl text-3xl text-center md:text-start font-[700]">
             About the Workshop
@@ -67,13 +66,9 @@ const Workshop = () => {
             A 4-day creative sprint to craft your own skincare brand
           </p>
         </div>
-
-        <DayViewer />
+ 
+        <Carousel />
       </div>
-
-     {/* cards grid */}
-     <CardsGrid/>
-     {/* cards grid */}
 
       {/* WORKSHOP OVERVIEW SECTION  */}
       <WorkshopOverview/>
